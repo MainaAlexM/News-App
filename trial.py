@@ -1,5 +1,5 @@
-import imp
-from turtle import title
+from re import T
+from unicodedata import name
 from flask import Flask, render_template
 from newsapi import NewsApiClient
 
@@ -26,3 +26,6 @@ def index():
     stories = zip(news, about, thumbnail)
     # title = "Al-jazeera Latest news"
     return render_template("index.html", context=stories)
+
+if __name__ == "__main__":
+    app.run(debug=True)
