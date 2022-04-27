@@ -1,0 +1,20 @@
+c46a57bef5c04ec0a493acd9c7a46218
+
+
+
+GET https://newsapi.org/v2/everything?q=Apple&from=2022-04-27&sortBy=popularity&apiKey=API_KEY
+Example request
+import requests
+
+url = ('https://newsapi.org/v2/everything?'
+       'q=Apple&'
+       'from=2022-04-27&'
+       'sortBy=popularity&'
+       'apiKey=c46a57bef5c04ec0a493acd9c7a46218')
+
+response = requests.get(url)
+
+print r.json
+ python3 -m venv --without-pip virtual
+ curl https://bootstrap.pypa.io/get-pip.py | python3
+ source virtual/bin/activate
