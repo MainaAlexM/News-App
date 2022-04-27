@@ -1,5 +1,5 @@
 import imp
-from flask import Flask
+from flask import Flask, render_template
 from newsapi import NewsApiClient
 
 
@@ -21,3 +21,6 @@ def index():
         news.append(theArticles["title"])
         about.append(theArticles["description"])
         thumbnail.append(theArticles["urlToImage"])
+
+    stories = zip(news, about, thumbnail)
+    return render_template("index.html", context=stories)
