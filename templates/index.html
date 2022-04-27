@@ -17,5 +17,14 @@
 
 </div>
 
+<div class="container-fluid">
+    {%for news, about, thumbnail in context %}
+    <img src="{{thumbnail}}" alt="">
+    <p>{{news}}</p>
+    <p> {{about}} </p>
+    {% endfor %}
+
+</div>
+    
 </body>
 </html>
