@@ -1,4 +1,5 @@
 import imp
+from turtle import title
 from flask import Flask, render_template
 from newsapi import NewsApiClient
 
@@ -23,4 +24,5 @@ def index():
         thumbnail.append(theArticles["urlToImage"])
 
     stories = zip(news, about, thumbnail)
+    # title = "Al-jazeera Latest news"
     return render_template("index.html", context=stories)
