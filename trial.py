@@ -2,7 +2,22 @@ import imp
 from flask import Flask
 from newsapi import NewsApiClient
 
+
+app = Flask(__name__)
+
 @app.route("/")
 def index():
     newsapi = NewsApiClient(api_key="c46a57bef5c04ec0a493acd9c7a46218")
-    latestNews = newsapi.get_top_headlines(sources="bbc-news")
+    newsHeadlines = newsapi.get_top_headlines(sources="bbc-news")
+
+    myArticles = newsHeadlines["articles"]
+
+    news = []
+    about = []
+    thumbnail = []
+
+    for item in range(len(myArticles)):
+        theArticles = myArticles[item]
+        news.append(theArticles["title"])
+        about.append(theArticles["description"])
+        thumbnail.append(theArticles["urlToImage"])
