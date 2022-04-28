@@ -10,19 +10,37 @@
 
 </head>
 <body>
+<div class="container-fluid" style="width: 100%;">
 
-<div class="desc">
+    <div class="desc">
 
-    <h1>Latest News App</h1>
+        <h1 class="text-center m-2">Latest News App</h1>
 
-</div>
+    </div>
 
-<div class="container-fluid">
-    {%for news, about, thumbnail in context %}
-    <img src="{{thumbnail}}" alt="">
-    <p>{{news}}</p>
-    <p> {{about}} </p>
-    {% endfor %}
+    <div class="container-fluid row" style="margin: 0 auto;">
+
+        {%for news, about, thumbnail in context %}
+            <div class=" col-3" style="margin: 1rem; width: 30%;">
+                <img src="{{thumbnail}}" alt="" style="height:15rem;">
+                <h4>{{news}}</h4>
+                <p>  {{about}} </p>
+            </div>
+        {% endfor %}
+        
+    </div>
+
+    <!-- <div class="container-fluid row">
+        {%for news, about, thumbnail in context %}
+            <div class="card col-3" style="width: 18rem;">
+                <img class="card-img-top" src="{{thumbnail}}" alt="" >
+                <div class="card-body">
+                    <h3 class="text-center"> {{news}}</h3>
+                    <p> {{about}} </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div> -->
 
 </div>
     
