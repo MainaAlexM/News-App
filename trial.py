@@ -1,7 +1,6 @@
-from re import T
-from unicodedata import name
 from flask import Flask, render_template
 from newsapi import NewsApiClient
+from instance import config
 
 
 app = Flask(__name__)
@@ -10,7 +9,7 @@ app = Flask(__name__)
 # BBC News 
 @app.route("/")
 def bbc():
-    newsapi = NewsApiClient(api_key="c46a57bef5c04ec0a493acd9c7a46218")
+    newsapi = NewsApiClient({{config.api_key}})
     newsHeadlines = newsapi.get_top_headlines(sources="bbc-news")
     anchors = newsapi.get_top_headlines(sources="q=Apple&")
 
