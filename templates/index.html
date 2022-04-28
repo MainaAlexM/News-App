@@ -20,10 +20,10 @@
 
     <div class="container-fluid row" style="margin: 0 auto;">
 
-        {%for news, about, thumbnail in context %}
+        {%for news, about, link, thumbnail in context %}
             <div class=" col-3" style="margin: 1rem; width: 30%;">
                 <img src="{{thumbnail}}" alt="" style="height:15rem;">
-                <h4>{{news}}</h4>
+                <a href="{{link}} "><h4>{{news}}</h4></a>
                 <p>  {{about}} </p>
             </div>
         {% endfor %}
