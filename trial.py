@@ -9,10 +9,10 @@ app = Flask(__name__)
 
 # BBC News 
 @app.route("/")
-def index():
+def bbc():
     newsapi = NewsApiClient(api_key="c46a57bef5c04ec0a493acd9c7a46218")
     newsHeadlines = newsapi.get_top_headlines(sources="bbc-news")
-    anchors = newsapi.get_top_headlines(sources="bbc-news")
+    anchors = newsapi.get_top_headlines(sources="q=Apple&")
 
     myArticles = newsHeadlines["articles"]
 
@@ -29,7 +29,7 @@ def index():
         link.append(theArticles["url"])
 
     stories = zip(news, about, link, thumbnail)
-    return render_template("index.html", context=stories)
+    return render_template("bbc.html", context=stories)
 
 # ....................................................................................
 
