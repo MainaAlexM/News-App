@@ -20,12 +20,12 @@
 
     <div class="container-fluid row" style="margin: 0 auto;">
 
-        {%for site, info in context %}
+        {%for site in context %}
             <div class=" col-3 info" style="margin: 1rem; width: 30%;">
                 <!-- <img src="{{thumbnail}}" alt="" style="height:15rem;">
                 <h4>{{news}}</h4> <a href="{{link}}" target="_blank"><span>View on Site</span></a></h4> -->
                 <p>  {{site}} </p>
-                <p>{{info}} </p>
+                <!-- <p>{{info}} </p> -->
                 <!-- <p>Published at:    {{time}} </p> -->
             </div>
         {% endfor %}

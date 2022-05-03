@@ -14,17 +14,18 @@
 
     <div class="desc">
 
-        <h1 class="text-center m-2">Latest BBC News</h1>
+        <h1 class="text-center m-2">{{title}} </h1>
 
     </div>
 
     <div class="container-fluid row" style="margin: 0 auto;">
 
-        {%for news, about, link, thumbnail in context %}
+        {%for news, about, link, thumbnail, time in context %}
             <div class=" col-3 info" style="margin: 1rem; width: 30%;">
                 <img src="{{thumbnail}}" alt="" style="height:15rem;">
-                <a href="{{link}} "><h4>{{news}}</h4></a>
+                <h4>{{news}}</h4> <a href="{{link}}" target="_blank"><span>View on Site</span></a></h4>
                 <p>  {{about}} </p>
+                <p>Published at:    {{time}} </p>
             </div>
         {% endfor %}
         
