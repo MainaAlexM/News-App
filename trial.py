@@ -94,7 +94,7 @@ def cnn():
 # Google News
 
 @app.route('/google')
-def cnn():
+def google():
     newsapi = NewsApiClient(api_key=NEWS_API_KEY)
     newsHeadlines = newsapi.get_top_headlines(sources="google-news")
 
