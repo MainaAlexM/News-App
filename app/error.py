@@ -1,4 +1,3 @@
-# Joseph Njogu2:05 AM
 # import os
 
 # class Config:

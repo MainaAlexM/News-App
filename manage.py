@@ -1,5 +1,6 @@
-from newsApp.views import app
-from newsApp import views
+from app.views import app
+from app import views
+
 
 
 if __name__ == "__main__":
