@@ -43,7 +43,7 @@ def bbc():
 @app.route("/sources")
 def sources():
     newsapi = NewsApiClient(api_key=NEWS_API_KEY)
-    Sources = newsapi.get_sources("bbc-news", "cnn", "google-news")
+    Sources = newsapi.get_sources()
 
     mySources = Sources["sources"]
     name = []
