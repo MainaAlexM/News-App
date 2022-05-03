@@ -16,19 +16,22 @@
 
 </head>
 <body>
-  
+
     <!-- Content -->
-    {% block content%}
+    <div class="container-fluid main-body">
+        {% block content%}
 
-    <div class="content"> Here is the content. </div>
+            <h1 class="text-center m-2">Latest on {{ title }} </h1>
 
-    {% endblock%}
+        {% endblock%}
 
-    <!-- Footer -->
+        <!-- Footer -->
 
-    <div class="footer text-center">
-        &copy; Alex Mathenge 2022
+        <div class="footer text-center">
+            &copy; Alex Mathenge 2022
+        </div>
+
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

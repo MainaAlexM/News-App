@@ -1,35 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+{% extends 'base.html' %}
 
-    <title>CNN Latest news</title>
+{% import 'macros.html' as macro %}
 
-</head>
-<body>
-<div class="container-fluid" style="width: 100%;">
 
-    <div class="desc">
+{{super}}
 
-        <h1 class="text-center m-2">Latest News on CNN</h1>
+{% include 'navbar.html' %}
 
-    </div>
+<title>CNN news</title>
+{% block content %}
+<div class="desc">
 
-    <div class="container-fluid row" style="margin: 0 auto;">
+    <h1 class="text-center m-2">Latest News on CNN News </h1>
 
-        {%for news, about, thumbnail in context %}
-            <div class=" col-3 col-sm-3" style="margin: 1rem; width: 30%;">
-                <img src="{{thumbnail}}" alt="" style="height:15rem;">
-                <h4>{{news}}</h4>
-                <p>  {{about}} </p>
-            </div>
-        {% endfor %}
-        
-    </div>
 </div>
+
+{{macro.showData(context)}}
+
+{% endblock %}
     
-</body>
-</html>
