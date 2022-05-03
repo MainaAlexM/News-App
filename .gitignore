@@ -1,5 +1,3 @@
 virtual/
 *.pyc
 instance/
-.env
-env
