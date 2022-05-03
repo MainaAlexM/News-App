@@ -36,6 +36,33 @@ def bbc():
 
 # ....................................................................................
 
+# News Sources
+@app.route("/sources")
+def sources():
+    newsapi = NewsApiClient(api_key=NEWS_API_KEY)
+    Sources = newsapi.get_sources()
+
+    mySources = Sources["sources"]
+    name = []
+    description = []
+    url = []
+    id = []
+
+    for i in range(len(mySources)):
+        mainSources = mySources[i]
+        name.append(mainSources["name"])
+        description.append(mainSources["description"])
+        url.append(mainSources["url"])
+        id.append(mainSources["country"])
+
+
+    sites = zip(name, description, url, id)
+    return render_template("sources.html", context=sites)
+
+
+
+
+
 # CNN News 
 
 @app.route('/cnn')

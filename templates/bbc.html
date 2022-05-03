@@ -25,11 +25,14 @@
                 <img src="{{thumbnail}}" alt="" style="height:15rem;">
                 <h4>{{news}}</h4> <a href="{{link}}" target="_blank"><span>View on Site</span></a></h4>
                 <p>  {{about}} </p>
-                <p>Published at:    {{time}} </p>
+      
+                <p>Published: {{time}} </p>
+
             </div>
         {% endfor %}
         
     </div>
+
 
     <!-- <div class="container-fluid row">
         {%for news, about, thumbnail in context %}
