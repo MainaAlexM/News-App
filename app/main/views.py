@@ -107,7 +107,7 @@ def news_category(id):
     Function that determines the news category and places them in relevant categories
 
     Args:
-        categoories
+        categories
     '''
     category_news=get_news("us", id)
     title=id.capitalize()
