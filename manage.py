@@ -8,7 +8,7 @@ manager.add_command('server', Server)
 
 @manager.command
 def test():
-    """Function that runs all the unit tests."""
+    """Function to run all unit tests."""
     import unittest
     tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
