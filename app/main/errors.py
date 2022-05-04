@@ -2,12 +2,12 @@ from flask import render_template
 from . import main
 
 @main.app_errorhandler(404)
-def four_Ow_four(error):
+def myError(error):
     '''
-    Function that handles the 404 file not found error
+    Function to handle the 404 error - file not found
 
     Args:
         error
     '''
-    return render_template('fourOwfour.html'),404
+    return render_template('myError.html'),404
     

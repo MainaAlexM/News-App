@@ -1,7 +1,6 @@
 import urllib.request,json
 from .models.articles import Articles
 from .models.news import News
-from instance.config import NEWS_API_KEY
 
 api_key = None
 base_url = None
@@ -10,8 +9,13 @@ def configure_request(app):
     '''
     Caling the API key
     '''
-    global api_key
-    api_key=NEWS_API_KEY
+    global api_key, news_url, everything_url, topic_url, source_url
+    api_key= app.config['NEWS_API_KEY']
+    news_url = app.config['NEWS_API_BASE_URL']
+    everything_url = app.config['EVERYTHING_API_BASE_URL']
+    topic_url = app.config['TOPIC_API_BASE_URL']
+    source_url = app.config['SOURCE_API_BASE_URL']
+
 
 def get_news(country, category):
     '''
@@ -21,7 +25,7 @@ def get_news(country, category):
         country & category
     '''
 
-    get_news_url = 'http://newsapi.org/v2/top-headlines?country={}&category={}&apiKey={}'.format(country, category, api_key)
+    get_news_url = 'http://newsapi.org/v2/top-headlines?country={}&category={}&apiKey=c46a57bef5c04ec0a493acd9c7a46218'.format(country, category, api_key)
 
     with urllib.request.urlopen(get_news_url) as url:
         fetch_news_data = url.read()
@@ -79,7 +83,7 @@ def news_from_source(source_id):
 
     '''
   
-    get_url = 'http://newsapi.org/v2/everything?sources={}&pageSize=30&apiKey={}'.format(source_id, api_key)
+    get_url = 'http://newsapi.org/v2/everything?sources={}&pageSize=30&apiKey=c46a57bef5c04ec0a493acd9c7a46218'.format(source_id, api_key)
 
     with urllib.request.urlopen(get_url) as url:
         get_data = url.read()
@@ -99,7 +103,7 @@ def get_sources():
     Function that uses the url request and returns the available sources
     '''
 
-    get_sources_url = 'https://newsapi.org/v2/sources?country=us&category=general&language=en&apiKey={}'.format(api_key)
+    get_sources_url = 'https://newsapi.org/v2/sources?country=us&category=general&language=en&apiKey=c46a57bef5c04ec0a493acd9c7a46218'.format(api_key)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -140,7 +144,7 @@ def search_topic(query):
     Args:
         query
     '''
-    search_topic_url = 'https://newsapi.org/v2/everything?q={}&sortBy=relevancy,publishedAt&pageSize=30&apiKey={}'.format(query, api_key)
+    search_topic_url = 'https://newsapi.org/v2/everything?q={}&sortBy=relevancy,publishedAt&pageSize=30&apiKey=c46a57bef5c04ec0a493acd9c7a46218'.format(query, api_key)
     with urllib.request.urlopen(search_topic_url) as url:
         search_topic_data = url.read()
         search_topic_response = json.loads(search_topic_data)
@@ -161,7 +165,7 @@ def search_from_source(query, source):
     Args:
         query, source
     '''
-    search_topic_url = 'https://newsapi.org/v2/everything?q={}&sortBy=relevancy,publishedAt&pageSize=30&sources={}&apiKey={}'.format(query, source, api_key)
+    search_topic_url = 'https://newsapi.org/v2/everything?q={}&sortBy=relevancy,publishedAt&pageSize=30&sources={}&apiKey=c46a57bef5c04ec0a493acd9c7a46218'.format(query, source, api_key)
     with urllib.request.urlopen(search_topic_url) as url:
         search_topic_data = url.read()
         search_topic_response = json.loads(search_topic_data)

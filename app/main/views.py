@@ -24,7 +24,7 @@ countries_dict={
     "tz":"Tanzania"
 }
 
-@main.route('/')
+# @main.route('/')
 @main.route('/home')
 def index():
     '''
@@ -56,6 +56,10 @@ def index():
         title="TreNews"
         return render_template('index.html', title=title, breaking_news=top_news, cnn=cnn, bbc=bbc, al=aljazeera,usa_today=usa_today, politico=politico, cbs=cbs, sources=sources, newsweek=newsweek, fox=fox, time=time, nbc=nbc, reuters=reuters, msnbc=msnbc)
 
+
+# @main.route('/')
+# def index():
+    
 
 @main.route('/source/<id>')
 def news_source(id):
