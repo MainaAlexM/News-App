@@ -125,4 +125,4 @@ def google():
     return render_template("google.html", context=stories, title = title)
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run()
