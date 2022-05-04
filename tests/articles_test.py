@@ -11,16 +11,8 @@ class TestArticles(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_article =  Articles("","","","","") # create an articles object
+        self.new_article =  Articles("BBC", "Kate Stallman", "Ukraine's night", "/bbc", "/image", "18-04-2022", "Something", "Loading") # create an articles object
 
 
-    def test_init(self):
-        '''
-        test_init test case to test if the object is initialized properly
-        '''
-
-        self.assertEqual(self.new_article.title,"")
-        self.assertEqual(self.new_article.description,"")
-        self.assertEqual(self.new_article.urlToImage,"")
-        self.assertEqual(self.new_article.publishedAt,"")
-        self.assertEqual(self.new_article.url,"")
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_article,Articles))

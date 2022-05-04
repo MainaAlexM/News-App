@@ -10,8 +10,8 @@ def configure_request(app):
     '''
     Caling the API key
     '''
-    global base_url,  api_key
-    api_key=app.config['NEWS_API_KEY']
+    global api_key
+    api_key=NEWS_API_KEY
 
 def get_news(country, category):
     '''
