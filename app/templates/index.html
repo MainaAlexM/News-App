@@ -18,43 +18,80 @@
         
 <!-- Content block -->
 {% block content %}
+  {{ super() }}
   <!-- Sources section  -->
   <div class="container-fluid" id="app">
     <div class="row">
-        <div class="col-md-4" id="sources">
-            <h3 style="text-align: center;" id="gen" class="bg-dark text-white">General News</h3>
-            <ul class="text-center list-group">
-            {{macro.displaySources(general)}}
-            </ul>
-            <h3 style="text-align: center;" id="bus" class="bg-dark text-white">Business News</h3>
-            <ul class="text-center list-group">
-            {{macro.displaySources(business)}}
-            </ul>
-            <h3 style="text-align: center;" id="sci" class="bg-dark text-white" >Science News</h3>
-            <ul class="text-center list-group">
-            {{macro.displaySources(science)}}
-            </ul>
-            <h3 style="text-align: center;" id="health" class="bg-dark text-white">Health News</h3>
-            <ul class="text-center list-group">
-            {{macro.displaySources(health)}}
-            </ul>
-            <h3 style="text-align: center;" id="tech" class="bg-dark text-white">Technology News</h3>
-            <ul class="text-center list-group">
-            {{macro.displaySources(technology)}}
-            </ul>
-            <h3 style="text-align: center;" id="enter" class="bg-dark text-white">Entertainment News</h3>
-            <ul class="text-center list-group">
-            {{macro.displaySources(entertainment)}}
-            </ul>
-            <h3 style="text-align: center;" id="sports" class="bg-dark text-white">Sports News</h3>
-            <ul class="text-center list-group">
-            {{macro.displaySources(sports)}}
-            </ul>
+
+      <div class="col-md-3" id="sources">
+
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" style="overflow: visible;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <h3>All News</h3>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">{{macro.displaySources(general)}}</a></li>
+          </ul>
         </div>
+
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <h3>Finance News</h3>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">{{macro.displaySources(business)}}</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <h3>Science News</h3>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">{{macro.displaySources(science)}}</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <h3>Health News</h3>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">{{macro.displaySources(health)}}</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <h3>Tech News</h3>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">{{macro.displaySources(technology)}}</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <h3>Entertainment News</h3>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">{{macro.displaySources(entertainment)}}</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <h3>Sports News</h3>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">{{macro.displaySources(sports)}}</a></li>
+          </ul>
+        </div>
+      </div>
             
         
-        <div class=" container col-md-8 toggle-topics" id="articles">
-          <h3 style="text-align: center;">TOP HEADLINES</h3>
+        <div class=" container col-md-9 toggle-topics" id="articles">
+          <h3 style="text-align: center; font-weight: 700;">Latest Updates</h3>
           <hr>
           <div style="display:flex; flex-wrap:wrap; ">
             <!-- <div class="" id="articles" style=" margin-right:10px; height: 100%; width: 100%; display:flexbox;"> -->
