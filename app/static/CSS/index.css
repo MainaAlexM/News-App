@@ -1,0 +1,27 @@
+#app{
+    background-color: rgb(129, 91, 3);
+    background-size:auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height:100%;
+    padding: 0px;
+    margin: 0px;
+    background-attachment: fixed;
+    background-clip: border-box;
+    overflow: scroll;
+  
+}
+
+#sources{
+    overflow:scroll;
+    max-height: 100vh;
+}
+
+#articles {
+    overflow:scroll;
+    max-height: 100vh;
+}
+.navbar{
+  height: 20vh;
+}

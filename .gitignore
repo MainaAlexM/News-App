@@ -1,5 +1,1 @@
-virtual/
-*.pyc
-instance/
-.env
-env
+virtual

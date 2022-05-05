@@ -1,0 +1,9 @@
+{% macro displaySources(source_list) %}
+
+    {% for source in source_list %}
+    <a href="/article/{{source.id}}">
+    <li class="list-group-item list-group-item-action"> {{source.name}}
+    </li></a>
+    {% endfor %}
+
+{% endmacro %}
