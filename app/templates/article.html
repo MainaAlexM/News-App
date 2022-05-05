@@ -1,0 +1,162 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+          </head>
+  <body>
+      <!-- Styles -->
+      {% block styles%}
+      {{ super() }}
+      <link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}">
+      {% endblock %}
+
+        <!-- Content block -->
+      {% block content %}
+        <!-- Sources section  -->
+        <div class="container-fluid" id="app">
+          <div class="row">
+
+            <div class="container col-md-8" id="articles">
+              <h3 style="text-align: center;">{{name}}</h3>
+              <hr>
+
+              <div style="display:flex; flex-wrap:wrap;">
+                
+                {%if article%}
+                  {% for i in article %}
+                  
+                    <div class=" card col-md-4 m-2 p-2" style="display:grid; ">
+                        <img  src="{{i.image}}" class="card-img-top img-fluid" alt="" style="height:200px; width:300px; ">
+                        <div class="card-body">
+                            <h4 class="card-title font-weight-bold"> {{i.title}} </h4>
+                            <p class="card-text"> {{i.description}} </p>
+                            <p class="card-text font-italic"> Date Published  {{i.publishDate}} </p>
+                            <br>
+                            <a href="{{i.link}}" class="" style=" bottom:10px;">Read More . . . </a>
+                        </div><br>
+                    </div>
+
+                    {% endfor %}
+                  {%else%} 
+                    <h3>the articles are unavailable</h3>
+                {%endif%}
+
+              </div>
+            </div>
+            
+
+              <div class="col-md-4" id="sources" style="float: right;">
+                <h3 style="text-align: center;" id="gen" class="bg-dark text-white">All Latest News</h3>
+                <ul class="text-center list-group">
+                  
+                  {% for general in general %}     
+                    {%if general.name == name%}
+                    <a href="/#">
+                    <li class="list-group-item list-group-item-action list-group-item-info ">{{general.name}}
+                    </li></a>
+                    {%else%}
+                    <a href="/article/{{general.id}}">
+                    <li class="list-group-item list-group-item-action ">{{general.name}}
+                    </li></a>
+                    {% endif%}
+                  {%endfor%}
+                </ul>
+
+                <h3 style="text-align: center;" id="health" class="bg-dark text-white">Health News</h3>
+                <ul class="text-center list-group">
+                  {% for health in health %}     
+                    {%if health.name == name%}
+                    <a href="/#">
+                    <li class="list-group-item list-group-item-action list-group-item-info ">{{health.name}}
+                    </li></a>
+                    {%else%}
+                    <a href="/article/{{health.id}}">
+                    <li class="list-group-item list-group-item-action ">{{health.name}}
+                    </li></a>
+                    {% endif%}
+                  {%endfor%}
+                </ul>
+
+                <h3 style="text-align: center;" id="bus" class="bg-dark text-white">Business News</h3>
+                <ul class="text-center list-group">
+                  {% for business in business %}     
+                    {%if business.name == name%}
+                    <a href="/#">
+                    <li class="list-group-item list-group-item-action list-group-item-info ">{{business.name}}
+                    </li></a>
+                    {%else%}
+                    <a href="/article/{{business.id}}">
+                    <li class="list-group-item list-group-item-action ">{{business.name}}
+                    </li></a>
+                    {% endif%}
+                  {%endfor%}
+                </ul>
+
+                <h3 style="text-align: center;" id="tech" class="bg-dark text-white">Technology</h3>
+                <ul class="text-center list-group">
+                  {% for technology in technology %}     
+                    {% if technology.name == name %}
+                    <a href="/#">
+                    <li class="list-group-item list-group-item-action list-group-item-info">{{technology.name}}
+                    </li></a>
+                    {% else %}
+                    <a href="/article/{{technology.id}}">
+                    <li class="list-group-item list-group-item-action ">{{technology.name}}
+                    </li></a>
+                    {% endif %}
+                  {%endfor%}
+                
+                </ul>
+
+                <h3 style="text-align: center;" id="sci" class="bg-dark text-white" >Science News</h3>
+                <ul class="text-center list-group">
+                  {% for science in science %}     
+                    {%if science.name == name%}
+                    <a href="/#">
+                    <li class="list-group-item list-group-item-action list-group-item-info">{{science.name}}
+                    </li></a>
+                    {%else%}
+                    <a href="/article/{{science.id}}">
+                    <li class="list-group-item list-group-item-action ">{{science.name}}
+                    </li></a>
+                    {% endif%}
+                  {%endfor%}
+                
+                
+                <h3 style="text-align: center;" id="enter" class="bg-dark text-white">Entertainment</h3>
+                <ul class="text-center list-group">
+                  {% for entertainment in entertainment %}     
+                    {%if entertainment.name == name%}
+                    <a href="/#">
+                    <li class="list-group-item list-group-item-action list-group-item-info">{{entertainment.name}}
+                    </li></a>
+                    {% else %}
+                    <a href="/article/{{entertainment.id}}">
+                    <li class="list-group-item list-group-item-action ">{{entertainment.name}}
+                    </li></a>
+                    {% endif %}
+                  {% endfor %}
+                  
+                </ul>
+                <h3 style="text-align: center;" id="sports" class="bg-dark text-white">Sports</h3>
+                <ul class="text-center list-group">
+                  {% for sports in sports %}     
+                    {%if sports.name == name%}
+                    <a href="/#">
+                    <li class="list-group-item list-group-item-action list-group-item-info ">{{sports.name}}
+                    </li></a>
+                    {%else%}
+                    <a href="/article/{{sports.id}}">
+                    <li class="list-group-item list-group-item-action ">{{sports.name}}
+                    </li></a>
+                    {% endif%}
+                  {%endfor%}
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        {% endblock %}
+</body>
+</html>
