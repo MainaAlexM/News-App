@@ -1,5 +1,5 @@
 #app{
-    background-color: rgb(129, 91, 3);
+    background-color: rgb(253, 250, 243);
     background-size:auto;
     background-position: center center;
     background-repeat: no-repeat;
@@ -23,5 +23,5 @@
     max-height: 100vh;
 }
 .navbar{
-  height: 20vh;
+    height: 20vh;
 }
